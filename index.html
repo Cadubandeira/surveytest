@@ -44,35 +44,36 @@
     </section>
 
     <!-- Linha do tempo -->
-    <section class="timeline" aria-label="Status do requerimento">
-      <h2 class="section-title">Linha do tempo</h2>
+    <section class="timeline-card">
+  <h2 class="timeline-card__title">Linha do tempo</h2>
 
-      <ol class="timeline__list">
-        <li class="timeline__item">
-          <div class="timeline__marker"></div>
-          <div class="timeline__content">
-            <p class="timeline__status">Requerimento aberto</p>
-            <p class="timeline__date">10 de setembro de 2024</p>
-          </div>
-        </li>
+  <ol class="timeline-new">
+    <li class="timeline-new__item">
+      <div class="timeline-new__marker"></div>
+      <div class="timeline-new__content">
+        <p class="timeline-new__status">Requerimento aberto</p>
+        <p class="timeline-new__date">10 de setembro de 2024</p>
+      </div>
+    </li>
 
-        <li class="timeline__item">
-          <div class="timeline__marker"></div>
-          <div class="timeline__content">
-            <p class="timeline__status">Em consulta com o setor responsável</p>
-            <p class="timeline__date">24 de setembro de 2024</p>
-          </div>
-        </li>
+    <li class="timeline-new__item">
+      <div class="timeline-new__marker timeline-new__marker--warning"></div>
+      <div class="timeline-new__content">
+        <p class="timeline-new__status">Em consulta com o setor responsável</p>
+        <p class="timeline-new__date">24 de setembro de 2024</p>
+      </div>
+    </li>
 
-        <li class="timeline__item timeline__item--final">
-          <div class="timeline__marker timeline__marker--hollow"></div>
-          <div class="timeline__content">
-            <p class="timeline__status">Situação final</p>
-            <p class="timeline__date timeline__date--placeholder">Em análise</p>
-          </div>
-        </li>
-      </ol>
-    </section>
+    <li class="timeline-new__item">
+      <div class="timeline-new__marker timeline-new__marker--empty"></div>
+      <div class="timeline-new__content">
+        <p class="timeline-new__status">Situação final</p>
+        <p class="timeline-new__date timeline-new__date--placeholder">Em análise</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
   </main>
 
   <!-- Modal -->
