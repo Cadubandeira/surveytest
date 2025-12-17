@@ -183,10 +183,15 @@ body {
   border: 1px solid #e5e7eb;
   margin-top: 20px;
 }
-
+.request-status__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
 /* Código */
 .request-status__code {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 1rem;
   font-weight: 700;
   color: #111827;
@@ -232,7 +237,6 @@ body {
 
 /* Badge de status */
 .request-status__badge {
-  display: inline-block;
   padding: 6px 14px;
   background: #ede9fe; /* roxo claro */
   color: #6d28d9;      /* roxo escuro */
@@ -240,6 +244,7 @@ body {
   font-weight: 600;
   border-radius: 999px;
   border: 1px solid #ddd6fe;
+  white-space: nowrap;
 }
 
 /* ===== Linha do tempo ===== */
