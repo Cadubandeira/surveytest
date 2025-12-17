@@ -189,26 +189,6 @@
   </div>
 
 
-  <script>
-  const modal = document.getElementById("modalBackdrop");
-  const openBtn = document.getElementById("openModalBtn");
-  const closeBtn = document.getElementById("closeModalBtn");
-
-  openBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.add("hidden");
-    }
-  });
-</script>
-
 
 <script>
   const now = new Date();
@@ -237,7 +217,6 @@
   const switchInput = document.getElementById("incorporadoSwitch");
   const switchLabel = document.getElementById("incorporadoLabel");
 
-  /* ===== FUNÇÕES DE FADE ===== */
   function showModal(modal) {
     modal.classList.add("show");
   }
@@ -246,12 +225,10 @@
     modal.classList.remove("show");
   }
 
-  /* ===== ABRIR MODAL 1 ===== */
   openBtn.addEventListener("click", () => {
     showModal(modal1);
   });
 
-  /* ===== FECHAR MODAL 1 ===== */
   closeBtn1.addEventListener("click", () => {
     hideModal(modal1);
   });
@@ -260,7 +237,6 @@
     if (e.target === modal1) hideModal(modal1);
   });
 
-  /* ===== FECHAR MODAL 2 ===== */
   closeBtn2.addEventListener("click", () => {
     hideModal(modal2);
   });
@@ -269,7 +245,6 @@
     if (e.target === modal2) hideModal(modal2);
   });
 
-  /* ===== SWITCH ALTERNA ENTRE OS MODAIS ===== */
   switchInput.addEventListener("change", () => {
     if (switchInput.checked) {
       switchLabel.textContent = "incorporado";
