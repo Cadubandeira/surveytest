@@ -32,7 +32,7 @@ body {
   align-items: center;    /* center them horizontally */
   margin: 0;
   padding: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Source Sans Pro", system-ui, sans-serif;
   background: var(--color-bg);
   color: var(--color-text-main);
 }
