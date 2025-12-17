@@ -274,20 +274,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border:1px;
 }
 
 /* Roxo base */
 .timeline-new__marker--completed,
 .timeline-new__marker--in-progress,
 .timeline-new__marker--pending {
-  background: #7c3aed; /* roxo principal */
+  background: #863BFF; /* roxo principal */
 }
 
 /* Completed (com check e glow) */
 .timeline-new__marker--completed {
-  border: 3px solid #f5f3ff;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.25);
-  color: #ffffff;
+  color: #863BFF;
+  background:white;
 }
 
 .timeline-new__marker-icon {
@@ -297,7 +297,7 @@ body {
 
 /* In progress */
 .timeline-new__marker--in-progress {
-  border: 3px solid #ede9fe;
+  border: 1px solid #ede9fe;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.22);
 }
 
