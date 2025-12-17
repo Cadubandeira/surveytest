@@ -1,0 +1,368 @@
+/* ===== Configurações base ===== */
+:root {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-primary: #0066ff;
+  --color-primary-soft: #e6f0ff;
+  --color-text-main: #1f2933;
+  --color-text-muted: #6b7280;
+  --color-alert-bg: #fff7e6;
+  --color-alert-border: #ffb84d;
+  --color-alert-icon: #ff8a00;
+  --color-border-soft: #e5e7eb;
+  --color-timeline-line: #d1d5db;
+  --color-timeline-active: #0066ff;
+  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text-main);
+}
+
+/* Limita a largura máxima para simular app mobile */
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.app-header,
+.app-main {
+  max-width: 480px;
+}
+
+/* ===== Cabeçalho ===== */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.app-header__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-subtitle {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.app-header__right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 6px;
+  border-radius: 999px;
+  transition: background-color var(--transition-fast);
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  background: rgba(15, 23, 42, 0.08);
+  outline: none;
+}
+
+/* ===== Conteúdo principal ===== */
+.app-main {
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+/* ===== Cartão de documentos faltantes ===== */
+.card {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  margin-bottom: 20px;
+}
+
+.card--alert {
+  background: var(--color-alert-bg);
+  border-color: var(--color-alert-border);
+}
+
+.card__icon {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--color-alert-border);
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.card__description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.card__action-button {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 500;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.card__action-button:hover,
+.card__action-button:focus-visible {
+  background: #0052cc;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* ===== Linha do tempo ===== */
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 8px 0 12px;
+}
+
+.timeline__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline__list::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-timeline-line);
+}
+
+.timeline__item {
+  display: flex;
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 18px;
+}
+
+.timeline__marker {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--color-timeline-active);
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.timeline__marker--hollow {
+  background: #ffffff;
+  border-color: var(--color-timeline-line);
+  box-shadow: none;
+}
+
+.timeline__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline__status {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.timeline__date {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.timeline__date--placeholder {
+  font-style: italic;
+}
+
+/* ===== Modal de avaliação ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.4);
+  z-index: 10;
+}
+
+.modal {
+  width: 100%;
+  max-width: 360px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 20px 18px 16px;
+}
+
+.modal__header {
+  margin-bottom: 16px;
+}
+
+.modal__title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal__subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Avaliação em estrelas ===== */
+.rating-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Esconde os radios, mas deixa acessíveis ao teclado */
+.rating input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Estrelas */
+.rating label {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #d1d5db;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Hover visual (para todas as estrelas à esquerda) */
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #fbbf24;
+  transform: translateY(-1px);
+}
+
+/* Estado selecionado */
+.rating input[type="radio"]:checked ~ label {
+  color: #f59e0b;
+}
+
+/* ===== Botão primário ===== */
+.primary-button {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  background: #0052cc;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+  outline: none;
+}
+
+/* ===== Responsividade ===== */
+@media (min-width: 600px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .app-main {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 14px 16px;
+  }
+}

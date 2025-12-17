@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Acompanhamento de Requerimento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonte Google (opcional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__left">
+      <button class="icon-button" aria-label="Voltar">
+        &#8592;
+      </button>
+      <div class="header-text">
+        <p class="header-subtitle">Atendimento</p>
+        <h1 class="header-title">COD 98087</h1>
+      </div>
+    </div>
+
+    <div class="app-header__right">
+      <button class="icon-button" aria-label="Mais opções">
+        &#8942;
+      </button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- Cartão de documentos faltantes -->
+    <section class="card card--alert" aria-labelledby="doc-faltantes-title">
+      <div class="card__icon" aria-hidden="true">!</div>
+      <div class="card__content">
+        <h2 id="doc-faltantes-title" class="card__title">Documentos faltantes</h2>
+        <p class="card__description">Faltou RG.</p>
+        <button class="card__action-button">
+          Clique aqui para enviar
+        </button>
+      </div>
+    </section>
+
+    <!-- Linha do tempo -->
+    <section class="timeline" aria-label="Status do requerimento">
+      <h2 class="section-title">Linha do tempo</h2>
+
+      <ol class="timeline__list">
+        <li class="timeline__item">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content">
+            <p class="timeline__status">Requerimento aberto</p>
+            <p class="timeline__date">10 de setembro de 2024</p>
+          </div>
+        </li>
+
+        <li class="timeline__item">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content">
+            <p class="timeline__status">Em consulta com o setor responsável</p>
+            <p class="timeline__date">24 de setembro de 2024</p>
+          </div>
+        </li>
+
+        <li class="timeline__item timeline__item--final">
+          <div class="timeline__marker timeline__marker--hollow"></div>
+          <div class="timeline__content">
+            <p class="timeline__status">Situação final</p>
+            <p class="timeline__date timeline__date--placeholder">Em análise</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Modal de avaliação -->
+  <div class="modal-backdrop" role="presentation">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal__header">
+        <h2 id="modal-title" class="modal__title">Avalie nosso serviço</h2>
+        <p class="modal__subtitle">Por favor, avalie sua experiência abaixo.</p>
+      </header>
+
+      <div class="modal__body">
+        <form class="rating-form">
+          <fieldset class="rating" aria-label="Avaliação de 1 a 5 estrelas">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 estrelas">&#9733;</label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 estrelas">&#9733;</label>
+
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 estrelas">&#9733;</label>
+
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 estrelas">&#9733;</label>
+
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 estrela">&#9733;</label>
+          </fieldset>
+
+          <button type="submit" class="primary-button">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
