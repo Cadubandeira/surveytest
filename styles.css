@@ -154,25 +154,28 @@ body {
 }
 
 .card__action-button {
-  align-self: flex-start;
-  margin-top: 6px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
-  border-radius: 999px;
+  background: none;
   border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
-  background: var(--color-primary);
-  color: #ffffff;
-  font-weight: 500;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+
+  color: #8A0538;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 130%;
+  text-decoration: underline;
+
+  display: inline-block;
 }
 
 .card__action-button:hover,
 .card__action-button:focus-visible {
-  background: #0052cc;
-  transform: translateY(-1px);
+  opacity: 0.8;
   outline: none;
 }
+
 
 
 /* ===== Request Status Card ===== */
