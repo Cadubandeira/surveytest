@@ -5,7 +5,6 @@
   <title>Acompanhamento de Requerimento</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonte Google (opcional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -39,9 +38,8 @@
         <h2 id="doc-faltantes-title" class="card__title">Documentos faltantes</h2>
         <p class="card__description">Faltou RG.</p>
         <button class="card__action-button" id="openModalBtn">
-        Clique aqui para enviar
+          Clique aqui para enviar
         </button>
-
       </div>
     </section>
 
@@ -78,27 +76,24 @@
   </main>
 
   <!-- Modal -->
-    <div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
     <section class="modal" role="dialog" aria-modal="true">
-
-        <!-- Top bar with close icon only -->
-        <div class="modal__topbar">
+      <!-- Top bar with close icon only -->
+      <div class="modal__topbar">
         <button class="modal__close" id="closeModalBtn" aria-label="Fechar modal">
-            &times;
+          &times;
         </button>
-        </div>
+      </div>
 
-        <!-- Modal header (title + subtitle) -->
-        <header class="modal__header">
+      <!-- Modal header (title + subtitle) -->
+      <header class="modal__header">
         <h2 class="modal__title">Avalie nosso serviço</h2>
         <p class="modal__subtitle">Por favor, avalie sua experiência abaixo.</p>
-        </header>
+      </header>
 
-        <div class="modal__body">
-        <!-- rating form stays the same -->
+      <div class="modal__body">
         <form class="rating-form">
-            <!-- stars... -->
-             <fieldset class="rating" aria-label="Avaliação de 1 a 5 estrelas">
+          <fieldset class="rating" aria-label="Avaliação de 1 a 5 estrelas">
             <input type="radio" id="star5" name="rating" value="5">
             <label for="star5" title="5 estrelas">&#9733;</label>
 
@@ -114,32 +109,35 @@
             <input type="radio" id="star1" name="rating" value="1">
             <label for="star1" title="1 estrela">&#9733;</label>
           </fieldset>
-            <button type="submit" class="primary-button">Enviar</button>
+
+          <button type="submit" class="primary-button">Enviar</button>
         </form>
-        </div>
-
+      </div>
     </section>
-    </div>
-</div>
+  </div>
 
-<script>
-  const modal = document.getElementById("modalBackdrop");
-  const openBtn = document.getElementById("openModalBtn");
-  const closeBtn = document.getElementById("closeModalBtn");
+  <script>
+    const modal = document.getElementById("modalBackdrop");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
 
-  openBtn.addEventListener("click", () => {
-    modal.hidden = false;
-  });
+    if (openBtn && modal && closeBtn) {
+      openBtn.addEventListener("click", () => {
+        modal.hidden = false;
+      });
 
-  closeBtn.addEventListener("click", () => {
-    modal.hidden = true;
-  });
+      closeBtn.addEventListener("click", () => {
+        modal.hidden = true;
+      });
 
-  // Optional: close modal when clicking outside it
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.hidden = true;
-  });
-</script>
+      // Close when clicking on the dark backdrop
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.hidden = true;
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
