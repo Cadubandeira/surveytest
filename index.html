@@ -76,7 +76,7 @@
   </main>
 
   <!-- Modal -->
-  <div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal-backdrop" id="modalBackdrop">
     <section class="modal" role="dialog" aria-modal="true">
       <!-- Top bar with close icon only -->
       <div class="modal__topbar">
@@ -117,27 +117,25 @@
   </div>
 
   <script>
-    const modal = document.getElementById("modalBackdrop");
-    const openBtn = document.getElementById("openModalBtn");
-    const closeBtn = document.getElementById("closeModalBtn");
+  const modal = document.getElementById("modalBackdrop");
+  const openBtn = document.getElementById("openModalBtn");
+  const closeBtn = document.getElementById("closeModalBtn");
 
-    if (openBtn && modal && closeBtn) {
-      openBtn.addEventListener("click", () => {
-        modal.hidden = false;
-      });
+  openBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
 
-      closeBtn.addEventListener("click", () => {
-        modal.hidden = true;
-      });
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
 
-      // Close when clicking on the dark backdrop
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.hidden = true;
-        }
-      });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
     }
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
