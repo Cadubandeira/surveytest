@@ -38,9 +38,10 @@
       <div class="card__content">
         <h2 id="doc-faltantes-title" class="card__title">Documentos faltantes</h2>
         <p class="card__description">Faltou RG.</p>
-        <button class="card__action-button">
-          Clique aqui para enviar
+        <button class="card__action-button" id="openModalBtn">
+        Clique aqui para enviar
         </button>
+
       </div>
     </section>
 
@@ -76,39 +77,53 @@
     </section>
   </main>
 
-  <!-- Modal de avaliação -->
-  <div class="modal-backdrop" role="presentation">
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <header class="modal__header">
-        <h2 id="modal-title" class="modal__title">Avalie nosso serviço</h2>
+  <!-- Modal -->
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true">
+
+        <!-- Top bar with close icon only -->
+        <div class="modal__topbar">
+        <button class="modal__close" id="closeModalBtn" aria-label="Fechar modal">
+            &times;
+        </button>
+        </div>
+
+        <!-- Modal header (title + subtitle) -->
+        <header class="modal__header">
+        <h2 class="modal__title">Avalie nosso serviço</h2>
         <p class="modal__subtitle">Por favor, avalie sua experiência abaixo.</p>
-      </header>
+        </header>
 
-      <div class="modal__body">
+        <div class="modal__body">
+        <!-- rating form stays the same -->
         <form class="rating-form">
-          <fieldset class="rating" aria-label="Avaliação de 1 a 5 estrelas">
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" title="5 estrelas">&#9733;</label>
-
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" title="4 estrelas">&#9733;</label>
-
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" title="3 estrelas">&#9733;</label>
-
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" title="2 estrelas">&#9733;</label>
-
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" title="1 estrela">&#9733;</label>
-          </fieldset>
-
-          <button type="submit" class="primary-button">
-            Enviar
-          </button>
+            <!-- stars... -->
+            <button type="submit" class="primary-button">Enviar</button>
         </form>
-      </div>
+        </div>
+
     </section>
-  </div>
+    </div>
+</div>
+
+<script>
+  const modal = document.getElementById("modalBackdrop");
+  const openBtn = document.getElementById("openModalBtn");
+  const closeBtn = document.getElementById("closeModalBtn");
+
+  openBtn.addEventListener("click", () => {
+    modal.hidden = false;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.hidden = true;
+  });
+
+  // Optional: close modal when clicking outside it
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.hidden = true;
+  });
+</script>
+
 </body>
 </html>

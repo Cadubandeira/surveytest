@@ -287,6 +287,31 @@ body {
   flex-direction: column;
 }
 
+.modal__topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.modal__close {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  background: rgba(0,0,0,0.08);
+  outline: none;
+}
+
+
 /* ===== Avaliação em estrelas ===== */
 .rating-form {
   display: flex;
