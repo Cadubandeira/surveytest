@@ -35,7 +35,6 @@ body {
 
 /* Limita a largura máxima para simular app mobile */
 body {
-  display: flex;
   justify-content: center;
 }
 
