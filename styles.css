@@ -173,6 +173,75 @@ body {
   outline: none;
 }
 
+
+/* ===== Request Status Card ===== */
+.request-status-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 18px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+/* Código */
+.request-status__code {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Data e hora */
+.request-status__datetime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.request-status__datetime-icon {
+  font-size: 1.1rem;
+}
+
+.request-status__datetime-text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.request-status__datetime-text strong {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Título */
+.request-status__title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Descrição */
+.request-status__description {
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Badge de status */
+.request-status__badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #ede9fe; /* roxo claro */
+  color: #6d28d9;      /* roxo escuro */
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid #ddd6fe;
+}
+
 /* ===== Linha do tempo ===== */
 /* ===== Timeline Card ===== */
 .timeline-card {
