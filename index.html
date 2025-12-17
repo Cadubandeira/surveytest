@@ -124,16 +124,16 @@
   </main>
 
   <!-- Modal -->
+  <!-- MODAL 1 (modal principal) -->
   <div class="modal-backdrop" id="modalBackdrop">
     <section class="modal" role="dialog" aria-modal="true">
-      <!-- Top bar with close icon only -->
+
       <div class="modal__topbar">
         <button class="modal__close" id="closeModalBtn" aria-label="Fechar modal">
           &times;
         </button>
       </div>
 
-      <!-- Modal header (title + subtitle) -->
       <header class="modal__header">
         <h2 class="modal__title">Avalie nosso serviço</h2>
         <p class="modal__subtitle">Por favor, avalie sua experiência abaixo.</p>
@@ -143,26 +143,51 @@
         <form class="rating-form">
           <fieldset class="rating" aria-label="Avaliação de 1 a 5 estrelas">
             <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" title="5 estrelas">&#9733;</label>
+            <label for="star5">&#9733;</label>
 
             <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" title="4 estrelas">&#9733;</label>
+            <label for="star4">&#9733;</label>
 
             <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" title="3 estrelas">&#9733;</label>
+            <label for="star3">&#9733;</label>
 
             <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" title="2 estrelas">&#9733;</label>
+            <label for="star2">&#9733;</label>
 
             <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" title="1 estrela">&#9733;</label>
+            <label for="star1">&#9733;</label>
           </fieldset>
 
           <button type="submit" class="primary-button">Enviar</button>
         </form>
       </div>
+
     </section>
   </div>
+
+  <!-- MODAL 2 (modal minimalista) -->
+  <div class="modal-backdrop" id="modalBackdrop2">
+    <section class="modal" role="dialog" aria-modal="true">
+
+      <div class="modal__topbar">
+        <button class="modal__close" id="closeModalBtn2" aria-label="Fechar modal">
+          &times;
+        </button>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- SWITCH FIXO NO VIEWPORT -->
+  <div class="incorporado-toggle">
+    <p id="incorporadoLabel">não incorporado</p>
+
+    <label class="switch">
+      <input type="checkbox" id="incorporadoSwitch">
+      <span class="slider"></span>
+    </label>
+  </div>
+
 
   <script>
   const modal = document.getElementById("modalBackdrop");
@@ -198,6 +223,64 @@
   const formatted = `${day}/${month}/${year} ${hours}:${minutes}`;
 
   console.log("Last deployment:", formatted);
+</script>
+
+
+<script>
+  const modal1 = document.getElementById("modalBackdrop");
+  const modal2 = document.getElementById("modalBackdrop2");
+
+  const openBtn = document.getElementById("openModalBtn");
+  const closeBtn1 = document.getElementById("closeModalBtn");
+  const closeBtn2 = document.getElementById("closeModalBtn2");
+
+  const switchInput = document.getElementById("incorporadoSwitch");
+  const switchLabel = document.getElementById("incorporadoLabel");
+
+  /* ===== FUNÇÕES DE FADE ===== */
+  function showModal(modal) {
+    modal.classList.add("show");
+  }
+
+  function hideModal(modal) {
+    modal.classList.remove("show");
+  }
+
+  /* ===== ABRIR MODAL 1 ===== */
+  openBtn.addEventListener("click", () => {
+    showModal(modal1);
+  });
+
+  /* ===== FECHAR MODAL 1 ===== */
+  closeBtn1.addEventListener("click", () => {
+    hideModal(modal1);
+  });
+
+  modal1.addEventListener("click", (e) => {
+    if (e.target === modal1) hideModal(modal1);
+  });
+
+  /* ===== FECHAR MODAL 2 ===== */
+  closeBtn2.addEventListener("click", () => {
+    hideModal(modal2);
+  });
+
+  modal2.addEventListener("click", (e) => {
+    if (e.target === modal2) hideModal(modal2);
+  });
+
+  /* ===== SWITCH ALTERNA ENTRE OS MODAIS ===== */
+  switchInput.addEventListener("change", () => {
+    if (switchInput.checked) {
+      switchLabel.textContent = "incorporado";
+      hideModal(modal1);
+      showModal(modal2);
+    } else {
+      switchLabel.textContent = "não incorporado";
+      hideModal(modal2);
+      showModal(modal1);
+    }
+  });
 </script>
 
 
