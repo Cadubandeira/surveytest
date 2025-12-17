@@ -45,27 +45,49 @@
 
     <!-- Linha do tempo -->
     <section class="timeline-card">
-  <h2 class="timeline-card__title">Linha do tempo</h2>
+  <div class="timeline-card__header">
+    <div class="timeline-card__deadline">
+      <span class="timeline-card__deadline-icon" aria-hidden="true">📅</span>
+      <p class="timeline-card__deadline-text">
+        Prazo estimado desde a abertura: <strong>15 dias úteis</strong>
+      </p>
+    </div>
+
+    <h2 class="timeline-card__title">Segunda via de Histórico Escolar</h2>
+    <p class="timeline-card__description">
+      Campo de observações com máximo de caracteres.
+    </p>
+  </div>
 
   <ol class="timeline-new">
+    <!-- Item 1 -->
     <li class="timeline-new__item">
-      <div class="timeline-new__marker"></div>
+      <div class="timeline-new__marker timeline-new__marker--completed">
+        <span class="timeline-new__marker-icon" aria-hidden="true">✓</span>
+      </div>
       <div class="timeline-new__content">
         <p class="timeline-new__status">Requerimento aberto</p>
         <p class="timeline-new__date">10 de setembro de 2024</p>
       </div>
     </li>
 
+    <!-- Item 2 -->
     <li class="timeline-new__item">
-      <div class="timeline-new__marker timeline-new__marker--warning"></div>
-      <div class="timeline-new__content">
-        <p class="timeline-new__status">Em consulta com o setor responsável</p>
-        <p class="timeline-new__date">24 de setembro de 2024</p>
+      <div class="timeline-new__marker timeline-new__marker--in-progress"></div>
+      <div class="timeline-new__content timeline-new__content--with-warning">
+        <div class="timeline-new__content-main">
+          <p class="timeline-new__status">Em consulta com o setor responsável</p>
+          <p class="timeline-new__date">24 de setembro de 2024</p>
+        </div>
+        <div class="timeline-new__warning" aria-label="Atenção">
+          ⚠️
+        </div>
       </div>
     </li>
 
-    <li class="timeline-new__item">
-      <div class="timeline-new__marker timeline-new__marker--empty"></div>
+    <!-- Item 3 (último, sem linha abaixo) -->
+    <li class="timeline-new__item timeline-new__item--last">
+      <div class="timeline-new__marker timeline-new__marker--pending"></div>
       <div class="timeline-new__content">
         <p class="timeline-new__status">Situação final</p>
         <p class="timeline-new__date timeline-new__date--placeholder">Em análise</p>
@@ -73,6 +95,7 @@
     </li>
   </ol>
 </section>
+
 
   </main>
 
