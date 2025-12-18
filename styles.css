@@ -2,7 +2,7 @@
 :root {
   --color-bg: #fafafa;
   --color-surface: #ffffff;
-  --color-primary: #0066ff;
+  --color-primary: #8A0538;
   --color-primary-soft: #e6f0ff;
   --color-text-main: #1f2933;
   --color-text-muted: #6b7280;
@@ -636,7 +636,7 @@ fieldset {
 
 .primary-button:hover,
 .primary-button:focus-visible {
-  background: #0052cc;
+  background: #8A0538;
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
   outline: none;
