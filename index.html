@@ -1,267 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Acompanhamento de Requerimento</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header class="app-header">
-    <div class="app-header__left">
-      <button class="icon-button" aria-label="Voltar">
-        &#8592;
-      </button>
 
-        <h1 class="header-title">COD 98087</h1>
-
-    </div>
-
-    <div class="app-header__right">
-      <button class="icon-button" aria-label="Mais opções">
-        &#8942;
-      </button>
-    </div>
-  </header>
-
-  <main class="app-main">
-    <!-- Cartão de documentos faltantes -->
-    <section class="card card--alert" aria-labelledby="doc-faltantes-title">
-      <div class="card__icon" aria-hidden="true">!</div>
-      <div class="card__content">
-        <h2 id="doc-faltantes-title" class="card__title">Documentos faltantes</h2>
-        <p class="card__description">Faltou RG.</p>
-        <button class="card__action-button" id="openModalBtn">
-          Clique aqui para enviar
-        </button>
-      </div>
-    </section>
-
-<!--card de status-->
-<section class="request-status-card">
-
-  <div class="request-status__top">
-    <h2 class="request-status__code">COD 98087</h2>
-
-    <div class="request-status__badge">
-      Em andamento
-    </div>
+<header class="app-header">
+  <div class="app-header__left">
+    <button class="icon-button" aria-label="Voltar">←</button>
+    <h1 class="header-title">COD 98087</h1>
   </div>
+  <div class="app-header__right">
+    <button class="icon-button" aria-label="Mais opções">⋮</button>
+  </div>
+</header>
 
-  <div class="request-status__datetime">
-    <span class="request-status__datetime-icon" aria-hidden="true">📅</span>
-    <p class="request-status__datetime-text">
-      Início em <strong>15 de setembro de 2024, às 15h32</strong>
+<main class="app-main">
+
+  <!-- ALERT CARD -->
+  <section class="card card--alert">
+    <div class="card__icon">!</div>
+    <div class="card__content">
+      <h2 class="card__title">Documentos faltantes</h2>
+      <p class="card__description">Faltou RG.</p>
+      <button class="card__action-button" id="openFromCard">
+        Clique aqui para enviar
+      </button>
+    </div>
+  </section>
+
+  <!-- STATUS CARD -->
+  <section class="request-status-card">
+    <div class="request-status__top">
+      <h2 class="request-status__code">COD 98087</h2>
+      <div class="request-status__badge">Em andamento</div>
+    </div>
+
+    <div class="request-status__datetime">
+      <span>📅</span>
+      <p>Início em <strong>15 de setembro de 2024, às 15h32</strong></p>
+    </div>
+
+    <h3 class="request-status__title">Segunda via de Histórico Escolar</h3>
+    <p class="request-status__description">
+      Campo de observações com máximo de caracteres.
     </p>
-  </div>
+  </section>
 
-  <h3 class="request-status__title">Segunda via de Histórico Escolar</h3>
-
-  <p class="request-status__description">
-    Campo de observações com máximo de caracteres.
-  </p>
-
-</section>
-
-
-
-    <!-- Linha do tempo -->
-    <section class="timeline-card">
-  <div class="timeline-card__header">
-    <div class="timeline-card__deadline">
-      <span class="timeline-card__deadline-icon" aria-hidden="true">📅</span>
-      <p class="timeline-card__deadline-text">
-        Prazo estimado desde a abertura: <strong>15 dias úteis</strong>
+  <!-- TIMELINE -->
+  <section class="timeline-card">
+    <div class="timeline-card__header">
+      <div class="timeline-card__deadline">
+        <span>📅</span>
+        <p>Prazo estimado: <strong>15 dias úteis</strong></p>
+      </div>
+      <h2 class="timeline-card__title">Segunda via de Histórico Escolar</h2>
+      <p class="timeline-card__description">
+        Campo de observações com máximo de caracteres.
       </p>
     </div>
 
-    <h2 class="timeline-card__title">Segunda via de Histórico Escolar</h2>
-    <p class="timeline-card__description">
-      Campo de observações com máximo de caracteres.
-    </p>
-  </div>
+    <ol class="timeline-new">
+      <li class="timeline-new__item">
+        <div class="timeline-new__marker timeline-new__marker--completed">✓</div>
+        <div>
+          <p class="timeline-new__status">Requerimento aberto</p>
+          <p class="timeline-new__date">10 de setembro de 2024</p>
+        </div>
+      </li>
 
-  <ol class="timeline-new">
-    <!-- Item 1 -->
-    <li class="timeline-new__item">
-      <div class="timeline-new__marker timeline-new__marker--completed">
-        <span class="timeline-new__marker-icon" aria-hidden="true">✓</span>
-      </div>
-      <div class="timeline-new__content">
-        <p class="timeline-new__status">Requerimento aberto</p>
-        <p class="timeline-new__date">10 de setembro de 2024</p>
-      </div>
-    </li>
-
-    <!-- Item 2 -->
-    <li class="timeline-new__item">
-      <div class="timeline-new__marker timeline-new__marker--in-progress"></div>
-      <div class="timeline-new__content timeline-new__content--with-warning">
-        <div class="timeline-new__content-main">
-          <p class="timeline-new__status">Em consulta com o setor responsável ⚠️</p>
+      <li class="timeline-new__item">
+        <div class="timeline-new__marker timeline-new__marker--in-progress"></div>
+        <div>
+          <p class="timeline-new__status">Em consulta ⚠️</p>
           <p class="timeline-new__date">24 de setembro de 2024</p>
         </div>
-      </div>
-    </li>
+      </li>
 
-    <!-- Item 3 (último, sem linha abaixo) -->
-    <li class="timeline-new__item timeline-new__item--last">
-      <div class="timeline-new__marker timeline-new__marker--pending"></div>
-      <div class="timeline-new__content">
-        <p class="timeline-new__status">Situação final</p>
-        <p class="timeline-new__date timeline-new__date--placeholder">Em análise</p>
-      </div>
-    </li>
-  </ol>
-</section>
+      <li class="timeline-new__item timeline-new__item--last">
+        <div class="timeline-new__marker timeline-new__marker--pending"></div>
+        <div>
+          <p class="timeline-new__status">Situação final</p>
+          <p class="timeline-new__date timeline-new__date--placeholder">
+            Em análise
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
 
+</main>
 
-  </main>
+<!-- MODAL SELECTOR -->
+<div class="modal-selector" id="modalSelector">
+  <button data-modal="modal1">Avaliação</button>
+  <button data-modal="modal2">Pesquisa</button>
+  <button data-modal="modal3">Feedback</button>
+  <button data-modal="modal4">Outro</button>
+</div>
 
-  <!-- Modal -->
-  <!-- MODAL 1 (modal principal) -->
-  <div class="modal-backdrop" id="modalBackdrop">
-    <section class="modal" role="dialog" aria-modal="true">
+<!-- MODALS -->
+<div class="modal-backdrop" id="modal1">
+  <section class="modal" style="--modal-width:380px;--modal-height:360px">
+    <button class="modal__close" data-close>×</button>
+    <iframe src="https://example.com/iframe1"></iframe>
+  </section>
+</div>
 
-      <div class="modal__topbar">
-        <button class="modal__close" id="closeModalBtn" aria-label="Fechar modal">
-          &times;
-        </button>
-      </div>
+<div class="modal-backdrop" id="modal2">
+  <section class="modal" style="--modal-width:420px;--modal-height:420px">
+    <button class="modal__close" data-close>×</button>
+    <iframe src="https://example.com/iframe2"></iframe>
+  </section>
+</div>
 
-      <header class="modal__header">
-        <h2 class="modal__title">Avalie nosso serviço</h2>
-        <p class="modal__subtitle">Por favor, avalie sua experiência abaixo.</p>
-      </header>
+<div class="modal-backdrop" id="modal3">
+  <section class="modal" style="--modal-width:360px;--modal-height:300px">
+    <button class="modal__close" data-close>×</button>
+    <iframe src="https://example.com/iframe3"></iframe>
+  </section>
+</div>
 
-      <div class="modal__body">
-        <form class="rating-form">
-          <fieldset class="rating" aria-label="Avaliação de 1 a 5 estrelas">
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5">&#9733;</label>
-
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4">&#9733;</label>
-
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3">&#9733;</label>
-
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2">&#9733;</label>
-
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1">&#9733;</label>
-          </fieldset>
-
-          <button type="submit" class="primary-button">Enviar</button>
-        </form>
-      </div>
-
-    </section>
-  </div>
-
-  <!-- MODAL 2 (modal minimalista) -->
-  <div class="modal-backdrop" id="modalBackdrop2">
-    <section class="modal" role="dialog" aria-modal="true">
-
-      <div class="modal__topbar">
-        <button class="modal__close" id="closeModalBtn2" aria-label="Fechar modal">
-          &times;
-        </button>
-      </div>
-        
-      <div class="modal__body">
-        <iframe src="https://pucpr--devpucpr.sandbox.my.site.com/PortalCandidato/survey/runtimeApp?invitationId=0KiHa0000009RNZ&surveyName=c_pia_feedback_6&UUID=bdd48204-731d-4042-9ba4-64470dda972b" width="100%" height="420" style="border: none; overflow: hidden; overflow-y: hidden;">
-        </iframe>
-      </div>
-    </section>
-  </div>
-
-  <!-- SWITCH FIXO NO VIEWPORT -->
-  <div class="incorporado-toggle">
-    <p id="incorporadoLabel">não incorporado</p>
-
-    <label class="switch">
-      <input type="checkbox" id="incorporadoSwitch">
-      <span class="slider"></span>
-    </label>
-  </div>
-
-
+<div class="modal-backdrop" id="modal4">
+  <section class="modal" style="--modal-width:400px;--modal-height:480px">
+    <button class="modal__close" data-close>×</button>
+    <iframe src="https://example.com/iframe4"></iframe>
+  </section>
+</div>
 
 <script>
-  const now = new Date();
+  const selector = document.getElementById("modalSelector");
+  const modals = document.querySelectorAll(".modal-backdrop");
 
-  const day = String(now.getDate()).padStart(2, "0");
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const year = now.getFullYear();
-
-  const hours = String(now.getHours()).padStart(2, "0");
-  const minutes = String(now.getMinutes()).padStart(2, "0");
-
-  const formatted = `${day}/${month}/${year} ${hours}:${minutes}`;
-
-  console.log("Last refresh:", formatted);
-</script>
-
-
-<script>
-  const modal1 = document.getElementById("modalBackdrop");
-  const modal2 = document.getElementById("modalBackdrop2");
-
-  const openBtn = document.getElementById("openModalBtn");
-  const closeBtn1 = document.getElementById("closeModalBtn");
-  const closeBtn2 = document.getElementById("closeModalBtn2");
-
-  const switchInput = document.getElementById("incorporadoSwitch");
-  const switchLabel = document.getElementById("incorporadoLabel");
-
-  function showModal(modal) {
-    modal.classList.add("show");
+  function closeAll() {
+    modals.forEach(m => m.classList.remove("show"));
+    selector.classList.remove("is-disabled");
   }
 
-  function hideModal(modal) {
-    modal.classList.remove("show");
-  }
-
-  openBtn.addEventListener("click", () => {
-    showModal(modal1);
+  document.querySelectorAll("[data-modal]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      closeAll();
+      document.getElementById(btn.dataset.modal).classList.add("show");
+      selector.classList.add("is-disabled");
+    });
   });
 
-  closeBtn1.addEventListener("click", () => {
-    hideModal(modal1);
+  document.querySelectorAll("[data-close]").forEach(btn => {
+    btn.addEventListener("click", closeAll);
   });
 
-  modal1.addEventListener("click", (e) => {
-    if (e.target === modal1) hideModal(modal1);
+  modals.forEach(m => {
+    m.addEventListener("click", e => {
+      if (e.target === m) closeAll();
+    });
   });
 
-  closeBtn2.addEventListener("click", () => {
-    hideModal(modal2);
-  });
-
-  modal2.addEventListener("click", (e) => {
-    if (e.target === modal2) hideModal(modal2);
-  });
-
-  switchInput.addEventListener("change", () => {
-    if (switchInput.checked) {
-      switchLabel.textContent = "incorporado";
-      hideModal(modal1);
-      showModal(modal2);
-    } else {
-      switchLabel.textContent = "não incorporado";
-      hideModal(modal2);
-      showModal(modal1);
-    }
-  });
+  document.getElementById("openFromCard")
+    .addEventListener("click", () => {
+      document.querySelector('[data-modal="modal1"]').click();
+    });
 </script>
-
 
 </body>
 </html>
