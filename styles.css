@@ -661,11 +661,10 @@ fieldset {
 .modal-selector {
   position: fixed;
   bottom: 32px;
-  left: 50%;
+  margin-left: 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(1, 1fr);
   width: min(360px, 92vw);
   z-index: 5;
 }
