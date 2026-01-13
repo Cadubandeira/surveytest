@@ -325,12 +325,15 @@
     selector.classList.remove("is-disabled");
   }
 
-  // X buttons
+  /* ===== CLOSE BUTTONS (❌) ===== */
   document.querySelectorAll("[data-close]").forEach(btn => {
-    btn.addEventListener("click", closeAllModals);
+    btn.addEventListener("click", e => {
+      e.stopPropagation(); // 🔴 IMPORTANT
+      closeAllModals();
+    });
   });
 
-  // Click on backdrop
+  /* ===== BACKDROP CLICK ===== */
   modals.forEach(modal => {
     modal.addEventListener("click", e => {
       if (e.target === modal) {
@@ -339,6 +342,7 @@
     });
   });
 </script>
+
 
 
 
