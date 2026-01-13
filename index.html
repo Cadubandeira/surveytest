@@ -243,7 +243,7 @@
 
   <!-- MODAL 5 (matriz) -->
   <div class="modal-backdrop" id="modal5">
-    <section class="modal" role="dialog" aria-modal="true">
+    <section class="modal" role="dialog" aria-modal="true" style="height:100%">
 
       <div class="modal__topbar">
         <button class="modal__close" id="closeModalBtn2" aria-label="Fechar modal">
@@ -312,6 +312,30 @@
   modals.forEach(modal => {
     modal.addEventListener("click", e => {
       if (e.target === modal) closeAllModals();
+    });
+  });
+</script>
+
+<script>
+  const selector = document.getElementById("modalSelector");
+  const modals = document.querySelectorAll(".modal-backdrop");
+
+  function closeAllModals() {
+    modals.forEach(modal => modal.classList.remove("show"));
+    selector.classList.remove("is-disabled");
+  }
+
+  // X buttons
+  document.querySelectorAll("[data-close]").forEach(btn => {
+    btn.addEventListener("click", closeAllModals);
+  });
+
+  // Click on backdrop
+  modals.forEach(modal => {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) {
+        closeAllModals();
+      }
     });
   });
 </script>
