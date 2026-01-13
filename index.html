@@ -244,25 +244,25 @@
   </div>
 
   <!-- RADIUSBUTTONS -->
-<div class="modal-selector" id="modalSelector" role="radiogroup" aria-label="Escolha de formulário">
+<div class="modal-selector" id="modalSelector">
 
-  <button class="selector-option" data-modal="modal1" aria-checked="false">
+  <button class="modal-btn" data-modal="modal1">
     Referência
   </button>
 
-  <button class="selector-option" data-modal="modal2" aria-checked="false">
+  <button class="modal-btn" data-modal="modal2">
     Estrelas
   </button>
 
-  <button class="selector-option" data-modal="modal3" aria-checked="false">
+  <button class="modal-btn" data-modal="modal3">
     Estrelas + Texto
   </button>
 
-  <button class="selector-option" data-modal="modal4" aria-checked="false">
+  <button class="modal-btn" data-modal="modal4">
     Seletor deslizante
   </button>
 
-    <button class="selector-option" data-modal="modal4" aria-checked="false">
+    <button class="modal-btn" data-modal="modal5">
     Matriz
   </button>
 
@@ -288,32 +288,19 @@
 <!-- script abertura modal novo-->
 <script>
   const selector = document.getElementById("modalSelector");
-  const options = selector.querySelectorAll(".selector-option");
+  const buttons = selector.querySelectorAll(".modal-btn");
   const modals = document.querySelectorAll(".modal-backdrop");
-
-  function clearSelection() {
-    options.forEach(opt => {
-      opt.classList.remove("is-selected");
-      opt.setAttribute("aria-checked", "false");
-    });
-  }
 
   function closeAllModals() {
     modals.forEach(m => m.classList.remove("show"));
     selector.classList.remove("is-disabled");
-    clearSelection();
   }
 
-  options.forEach(option => {
-    option.addEventListener("click", () => {
-      clearSelection();
-
-      option.classList.add("is-selected");
-      option.setAttribute("aria-checked", "true");
-
-      const modalId = option.dataset.modal;
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.dataset.modal;
+      closeAllModals();
       document.getElementById(modalId).classList.add("show");
-
       selector.classList.add("is-disabled");
     });
   });
@@ -328,6 +315,8 @@
     });
   });
 </script>
+
+
 
 <!-- script modal abertura antigo <script>
   const modal1 = document.getElementById("modalBackdrop");

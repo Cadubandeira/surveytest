@@ -658,7 +658,6 @@ fieldset {
 }
 
 
-
 .modal-selector {
   position: fixed;
   bottom: 32px;
@@ -666,15 +665,14 @@ fieldset {
   transform: translateX(-50%);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  width: min(360px, 90vw);
+  gap: 12px;
+  width: min(360px, 92vw);
   z-index: 5;
 }
 
-/* Base option */
-.selector-option {
+.modal-btn {
   padding: 14px 12px;
-  border-radius: 10px; /* REGULAR radius */
+  border-radius: 8px; /* regular corners */
   border: 1px solid #d1d5db;
   background: #ffffff;
   font-size: 0.9rem;
@@ -682,30 +680,18 @@ fieldset {
   color: #374151;
   cursor: pointer;
   text-align: center;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Hover / focus */
-.selector-option:hover,
-.selector-option:focus-visible {
-  border-color: #7c3aed;
+.modal-btn:hover,
+.modal-btn:focus-visible {
+  background: #f3f4f6;
+  border-color: #9ca3af;
   outline: none;
 }
 
-/* Selected state */
-.selector-option.is-selected {
-  background: #ede9fe;
-  border-color: #7c3aed;
-  color: #5b21b6;
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
-}
-
-/* Disabled when modal open */
+/* Disabled when modal is open */
 .modal-selector.is-disabled {
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.45;
 }
