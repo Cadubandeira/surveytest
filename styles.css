@@ -656,3 +656,56 @@ fieldset {
     padding: 14px 16px;
   }
 }
+
+
+
+.modal-selector {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: min(360px, 90vw);
+  z-index: 5;
+}
+
+/* Base option */
+.selector-option {
+  padding: 14px 12px;
+  border-radius: 10px; /* REGULAR radius */
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* Hover / focus */
+.selector-option:hover,
+.selector-option:focus-visible {
+  border-color: #7c3aed;
+  outline: none;
+}
+
+/* Selected state */
+.selector-option.is-selected {
+  background: #ede9fe;
+  border-color: #7c3aed;
+  color: #5b21b6;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+}
+
+/* Disabled when modal open */
+.modal-selector.is-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
